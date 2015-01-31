@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing drivers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>driver name</th>
+      <th>number</th>
+      <th>experience</th>
+      <th>license number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drivers.each do |driver| %>
+      <tr>
+        <td><%= driver.dreiver_name %></td>
+        <td><%= driver.number %></td>
+        <td><%= driver.experience %></td>
+        <td><%= driver.license_number %></td>
+        <td><%= link_to 'Show', driver %></td>
+        <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
+        <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New driver', new_driver_path %>
